@@ -8,6 +8,10 @@
 \usepackage{longtable}
 \usepackage{{graphicx}}
 \usepackage{wrapfig}
+
+
+\usepackage{amsmath}
+
 \usepackage{subcaption}
 \usepackage[rightcaption]{sidecap}
 \graphicspath{{./images/}} 
@@ -98,7 +102,7 @@
     \end{tabular}
 \end{center}
 
-
+\subsection{Table covering the page width}
 \begin{center}
     \begin{tabularx}{0.8\textwidth}{
         | >{\raggedright\arraybackslash}X
@@ -115,7 +119,7 @@
 \end{center}
 
 \begin{center}
-
+\subsection{Creating a full Functional Table}
 \end{center}
     \begin{tabular}{|c|c|c|c|}
        \hline
@@ -188,6 +192,7 @@
     \caption{GOAT}
     \label{fig:enter-label}
 \end{figure}
+\subsection{How to use Long Table}
 \begin{longtable}[c]{| c | c |}
 \caption{Long table caption.\label{long}}\\
  \hline
@@ -400,11 +405,11 @@ Table \ref{tab:my_label} is an example of a reference
     \caption{Reference Table}
     \label{tab:my_label}
 \end{table}
-\subsubsection{\large Subsection}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
 % images
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Images}
 \lipsum[1-2]
 \includegraphics[width=0.6\textwidth]{one_piece}
 \includegraphics[width=0.8 \textwidth]{luffy} \\
@@ -448,5 +453,180 @@ Table \ref{tab:my_label} is an example of a reference
     \caption{Caption}
     \label{fig:enter-label}
 \end{figure}
-\lipsum[1-2]
+\lipsum[1-2] \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Day 6- Inline math mode
+\section{Inline Maths Mode}
+
+\noindent Standard \LaTeX{} practice is to write inline math by enclosing it between \verb|\(...\)|:\\
+Its the simple mathematical expression : \(x^2+y^2-z^2\)
+\noindent Instead of write inline math by enclosing it between \verb|(...\):|\\ we can use \texttt(\$....\$)
+Its the simple mathematical expression : $x^2+y^2-z^2$ \\
+\noindent Or you can use 
+\verb|\begin{math}...\end{math}|:
+Its the simple mathematical expression:
+\begin{math}x^2+y^2=z^^2\end{math}
+\subsection{Display maths}
+%% Display math.
+Display math section
+three different ways to write display math mode:
+1. \verb|\[....\]| Expression : \[x^2+y^2\]
+2. \verb|\begin{displaymath}....\end{displaymath}| expression: \begin{displaymath}x^2+y^2\end{displaymath}
+3. \verb|\begin{equation}...\end{equation}| expression: \begin{equation}
+    x^2+y^2=z 
+\end{equation}
+\subsection{Mathematical symbols}
+$\alpha A \\
+\beta B \\
+\gamma \ \Gamma \ \delta \
+\theta \ \infty 
+\int \ \oint \ \sum \ \prod
+$
+\subsection{Subscript and Superscript}
+1. We use \_\ for subscript.
+
+$
+a_2 \\
+a_{ij+1}
+$ \\
+2. We use\^\ for superscript.\\
+$
+a^2
+a^{ij-1}
+$ \\
+\\
+$
+ a_{ij+1}^{ij-1}\\
+ \\
+(a_1^2)^3 \\
+$
+\section{How to use Brackets}
+We can use Brackets like this is \LaTeX. \\
+
+$
+\{x+y\} \\
+\langle x+1 \rangle
+$\\
+
+\noindent Newton's Law of Gravitation
+\[F=G(\frac{m_1m_2}{r^2})\] 
+
+\noindent Using this we can use bigger brackets. \\
+\[
+F=G\left(\frac{m_1m_2}{r^2}\right)
+\]
+Multi-line Equations \\
+\begin{align*}
+      y=1+ &\left(\frac{1}{x}+ \frac{1}{x^2} + \frac{1}{x^3} + \ldots \right. \\
+        &\left. \quad + \frac{1}{x^{n-1}} + \frac{1}{x^n} \right )
+\end{align*}
+\\
+Binomial Expression
+\[\binom{n}{k}=\frac{n!}{k!(n-k)!}\] \\
+Taylor Series
+\[f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n\]
+Euler's Theorem
+\[e^{i \theta}=\cos \theta + i \sin \theta\]
+
+\noindent Fourier Theorem
+\[
+\mathcal{F}\{f(t)\}=F{\omega}=\int_{-\infty}^{\infty} f(t) e^{-i \omega t}\,dt
+\]
+Schrodinger Equation
+\[
+i \hbar \frac{\partial}{\partial t} \Psi{\mathbf{r},t}= \left (-\frac{\hbar^2}{2m}c \nabla^2 + v(\mathbf{r},t) \right) 
+\]
+
+Maxwell's Equation
+\begin{align*}   
+& \nabla . \textbf{E} = \frac{\rho}{\epsilon_0}  \\
+& \nabla . \textbf{B} = 0 \\
+& \nabla x \textbf{E}= -\frac{\partial B}{\partial t} \\
+& \nabla x B = \mu_0 J + \mu_0 \epsilon_0 \frac{\partial E}{\partial t} 
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Matrix}
+
+
+\begin{enumerate}
+    \item Plain: $ \begin{matrix} 1& 2 & 3 \\ a & b & c \end{matrix}$
+    \item Parenthesis; round brackets : $\begin{pmatrix}
+        1 & 2 & 3 \\ a & b & c 
+    \end{pmatrix}$
+    \item Braces; square brackets : $ \begin{bmatrix}
+        1 & 2 & 3 \\ a & b & c
+    \end{bmatrix}$
+    \item  Braces; curly brackets : $\begin{Bmatrix}
+       1 & 2 & 3 \\ a & b & c 
+   \end{Bmatrix}$ 
+    \item Pipes: $\begin{vmatrix}
+        1 & 2 & 3 \\ a & b & c
+    \end{vmatrix}$
+    \item Double pipes: $ \begin{Vmatrix}
+        1 & 2 & 3 \\ a & b & c
+    \end{Vmatrix}$ \\
+    $\begin{pmatrix}
+        a & b \\
+        c & d
+    \end{pmatrix}$
+    but it looks too big, so let's try
+    $\big(\begin{smallmatrix}
+        a & b \\
+        c & d
+    \end{smallmatrix}\big)$
+    instead.
+
+\[
+c= \begin{bmatrix}
+    \begin{vmatrix}
+        1 & 4 \\
+        6 & 0
+    \end{vmatrix} & - \begin{vmatrix}
+        1 & 2 \\
+        3 & 4 \\
+    \end{vmatrix} & \begin{vmatrix}
+        5 & 6 \\
+        7 & -7
+    \end{vmatrix} \\
+    - \begin{vmatrix}
+        1 & 2 \\
+        4 & 5
+    \end{vmatrix} & \begin{vmatrix}
+        1 & 3 \\ 
+        4 & -8
+    \end{vmatrix} & - \begin{vmatrix}
+        1 & 2 \\
+        3 & -5 
+    \end{vmatrix} \\
+     \begin{vmatrix}
+        1 & 2 \\
+        4 & 5
+    \end{vmatrix} & - \begin{vmatrix}
+        1 & 3 \\ 
+        4 & -8
+    \end{vmatrix} & \begin{vmatrix}
+        1 & 2 \\
+        3 & -5 
+    \end{vmatrix} \\
+\end{bmatrix}
+\]
+\end{enumerate}
+
+\section{Size and Spacing with typeset mathematics}
+Fraction typeset within a paragraph typically look like this: \(\frac{3x}{2}\). \\
+For longer display style \(\displaystyle \frac{3x}{2}\) which also has an effect on line spacing. \\
+\(\scriptstyle  \frac{3x}{2}\) or \(\scriptscriptstyle \frac{3x}{2}\) \\
+ Equally, you can change the style of mathematics normally typeset in display style :
+
+ \[f(x)=\frac{p(x)}{Q(x)}\quad \textrm{and} \quad \textstyle 
+ f(x)=\frac{p(x)}{Q(x)}\quad \textrm{and} \quad \scriptstyle f(x)= \frac{P(x)}{Q(x)} 
+ \]
+   
+ \[
+  \cfrac[|]{1}{\sqrt{2} +
+    \cfrac[r]{1}{\sqrt{2}+
+    \cfrac{1}{\sqrt{2}+\dotsb }}}
+ \]
 \end{document}
