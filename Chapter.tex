@@ -8,10 +8,10 @@
 \usepackage{longtable}
 \usepackage{{graphicx}}
 \usepackage{wrapfig}
-
-
+\usepackage{natbib}
+\usepackage{listings}
 \usepackage{amsmath}
-
+\usepackage{minted}
 \usepackage{subcaption}
 \usepackage[rightcaption]{sidecap}
 \graphicspath{{./images/}} 
@@ -629,4 +629,47 @@ For longer display style \(\displaystyle \frac{3x}{2}\) which also has an effect
     \cfrac[r]{1}{\sqrt{2}+
     \cfrac{1}{\sqrt{2}+\dotsb }}}
  \]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \section{IEEE citation}
+
+Uncertainity modeling and estimation are being increasingly used to deep learning based medical imaging application. \cite{bharati2020deep,jogin2018feature, nasteski2017overview}
+
+Uncertainity modeling and estimation are being increasingly used to deep learning based medical imaging application. \cite{jogin2018feature,reich2009rich}
+
+\bibliographystyle{chicago}
+\bibliography{references}
+
+%for report-Bibilography, for article- References
+\lstlistoflistings
+\newpage
+\section{Code Listing}
+\begin{lstlisting}[language=python, caption=Python example]
+    import pandas as pd
+
+    def load_df{load_path}:
+        df = pd.read_csv{file_path}
+        return df
+
+    dataframe = load_df(file_path)
+    print(dataframe.head(10))    
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Use minted
+\listoflistings
+\newpage
+\begin{listing}
+    \begin{minted}{python}
+        import pandas as pd
+
+    def load_df{load_path}:
+        df = pd.read_csv{file_path}
+        return df
+
+    dataframe = load_df(file_path)
+    print(dataframe.head(10))
+    \end{minted}
+    \caption{Example python}
+    \label{listing:1}
+\end{listing}
 \end{document}
